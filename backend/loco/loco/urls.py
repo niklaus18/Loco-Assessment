@@ -19,10 +19,10 @@ from rest_framework import routers
 from transaction.views import TransactionViews
 
 router = routers.DefaultRouter()
-router.register(r'', TransactionViews, basename="transactionservice")
+router.register(r'transactionservice', TransactionViews, basename="transactionservice")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-    path('transactionservice', include('rest_framework.urls', namespace='rest_framework'))
+    path('transactionservice', include('rest_framework.urls', namespace='transactionservice'))
 ]

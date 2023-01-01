@@ -8,3 +8,5 @@ class Transaction(BaseModel):
     amount = models.DecimalField(max_digits=10, decimal_places=2, null=False, blank=False)
     parent = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True)
 
+    def __str__(self):
+        return f"{self.transaction_type} - {self.amount}"
