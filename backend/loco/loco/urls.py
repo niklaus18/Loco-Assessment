@@ -13,16 +13,26 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
-from rest_framework import routers
-from transaction.views import TransactionViews
+# from django.contrib import admin
+# from django.urls import path, include
+# from rest_framework import routers
+# from transaction.views import TransactionViews
 
-router = routers.DefaultRouter()
-router.register(r'transactionservice', TransactionViews, basename="transactionservice")
+# router = routers.DefaultRouter()
+# router.register(r'transactionservice', TransactionViews, basename="transactionservice")
+
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('', include(router.urls)),
+#     path('transactionservice', include('rest_framework.urls', namespace='transactionservice'))
+# ]
+
+
+from django.contrib import admin
+from django.urls import path,include
+# from transaction import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls)),
-    path('transactionservice', include('rest_framework.urls', namespace='transactionservice'))
+    path('transactionservice/',include('transaction.urls')),
 ]

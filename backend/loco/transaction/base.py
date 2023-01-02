@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django import utils
 from django.db.models.query import QuerySet
 
 class SoftDeletionQuerySet(QuerySet):
@@ -52,5 +53,5 @@ class SoftDeletionModel(models.Model):
 
 
 class BaseModel(SoftDeletionModel):
-    created_at = models.DateTimeField(blank=True, null=True, default=timezone.now())
+    created_at = models.DateTimeField(blank=True, null=True, default = utils.timezone.now)
     updated_at = models.DateTimeField(blank=True, null=True)
