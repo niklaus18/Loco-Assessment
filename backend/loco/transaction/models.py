@@ -10,4 +10,4 @@ class Transaction(BaseModel):
     parent_id = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
-        return f"{self.transaction_type} - {self.amount}"
+        return f"{self.type} - {self.amount}"
