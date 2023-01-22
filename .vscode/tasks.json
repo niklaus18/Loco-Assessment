@@ -25,7 +25,7 @@
 					"--nothreading",
 					"--noreload"
 				],
-				"file": "backend/loco/manage.py"
+				"file": "manage.py"
 			}
 		}
 	]
