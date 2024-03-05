@@ -2,7 +2,8 @@ from transaction.models import Transaction
 from django.db.models import Sum
 
 
-def get_sum(ids, checked_id=[]):
+def get_sum(ids, checked_id=None):
+    checked_id = [] if checked_id is None else checked_id
     if len(ids) == 0:
         return 0
     total_sum = 0
